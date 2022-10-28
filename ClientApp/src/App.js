@@ -16,7 +16,7 @@ export default class App extends Component {
         <Header></Header>
       </div><div>
         </div><Link to="/ingredients"><button></button></Link></>
-        <div><Link to="/recipies"></Link></div></>
+        <div><Link to="/recipes"><button></button></Link></div></>
     );
   }
 }

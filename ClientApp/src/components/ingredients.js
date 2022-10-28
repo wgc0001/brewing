@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Select from 'react-select';
 
-const ingredientOptions = [
+const ingredientTypes = [
 
     {label:"Hops", value: "Hops"},
     {label:"Base Malt", value: "Base Malt"},
@@ -16,7 +16,7 @@ class ingredientDropDown extends React.Component  {
         <div className='row'>
             <div className ='col-md-4'></div>
             <div className ='col-md-4'>
-                <Select options={ingredientOptions}/>
+                <Select options={ingredientTypes}/>
             </div>
             <div className='col-md-4'></div>
         </div>

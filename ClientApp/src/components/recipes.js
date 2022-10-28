@@ -18,6 +18,14 @@ const createRecipe =({onChangeForm, createRecipe}) => {
                                 <input type='text' onChange ={(x)=>onChangeForm(x)} className='recipe-form' name='baseMaltAmount' id ="baseMaltAmount" placeholder='Base Malt Amount'/>
                                 <button type="submit">
                                 </button>
+                                <label>Hop</label>
+                                <input type='text' onChange ={(x)=>onChangeForm(x)} className='recipe-form' name='Hops' id ="Hops" placeholder='Hops'/>
+                                <button type="submit">
+                                </button>
+                                <label>Hop Amount</label>
+                                <input type='text' onChange ={(x)=>onChangeForm(x)} className='recipe-form' name='hopAmount' id ="hopAmount" placeholder='Hop Amount'/>
+                                <button type="submit">
+                                </button>
                             </div>  
                         </div>
                     </form>
