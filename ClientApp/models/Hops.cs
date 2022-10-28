@@ -1,6 +1,9 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace brewing.Models
 {
-    public class Hops
+    [Table("hops")]
+    public class Hop
     {
         public int Id {get;set;}
         public string? Description {get; set;}
