@@ -11,9 +11,19 @@ export const Header =() => {
     }
 
     return (
-        <div style={headerStyle}>
-            <h1>Brewing App</h1>
+        <header style={headerStyle}>
+        <h1>Book Management App</h1>
+        <hr />
+        <div className="links">
+          <NavLink to="/" className="link" activeClassName="active" exact>
+            
+          </NavLink>
+          <NavLink to="/add" className="link" activeClassName="active">
+            Add Recipe
+          </NavLink>
         </div>
-    )
+      </header>
+    );
+};
 
-}
+export default Header;
