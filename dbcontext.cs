@@ -27,6 +27,6 @@ namespace BrewingContext
         public DbSet<IngredientType>? IngredientTypes {get; set;}
         public DbSet<MaltColor>? MaltColors {get; set;}
         public DbSet<Malt>? Malts {get; set;}
-        public DbSet<Recipe>? Recipes {get; set;}
+        public DbSet<Recipe> Recipes {get; set;}
     }
 }

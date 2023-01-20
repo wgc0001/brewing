@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using brewing.Models;
+using brewing.Requests;
 using BrewingContext;
 
-namespace RecipeService {
+namespace brewing.RecipeService {
     public interface IRecipeService {
       // Get all recipes in the database
       Task<IEnumerable<Recipe>> GetAllRecipes();
@@ -99,6 +100,21 @@ namespace RecipeService {
 
 
 
+        }
+
+        public Task<IEnumerable<Recipe>> GetAllRecipes()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Recipe> IRecipeService.GetRecipeByName(string Name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Recipe> GetRecipeByMalt(string Malts)
+        {
+            throw new NotImplementedException();
         }
     }
 }
