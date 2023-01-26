@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using brewing.Models;
 using BrewingContext;
 using brewing.RecipeService;
+using brewing.Helpers;
+using brewing.Requests;
 
 namespace brewing.Controllers
 {
@@ -23,14 +25,14 @@ namespace brewing.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllRecipes()
         {
-            IEnumerable<Recipe> recipes = await _RecipeService.GetAllRecipesAsync();
+            IEnumerable<Recipe> recipes = await _RecipeService.GetAllRecipes();
             return Ok(recipes);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetRecipeById(int id)
+        public async Task<IActionResult> GetRecipeByName(string Name)
         {
-            Recipe recipe = await _RecipeService.GetRecipesByAsync(id);
+            Recipe recipe = await _RecipeService.GetRecipeByName(Name);
             return Ok(recipe);
         }
 
@@ -58,9 +60,10 @@ namespace brewing.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAuthor(int id)
+        public async Task<IActionResult> DeleteRecipe(int id)
         {
-            
+            await _RecipeService.DeleteRecipe(id);
+            return Ok(new {message = "Recipe was deleted"});
         }
     }
 }

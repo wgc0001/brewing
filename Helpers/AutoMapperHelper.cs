@@ -1,8 +1,9 @@
 using AutoMapper;
 using brewing.Models;
 using brewing.Requests;
+using System;
 
-namespace brewing.Helpers;
+namespace brewing.Helpers
 {
     public class AutoMapperHelper: Profile
     {
@@ -12,8 +13,8 @@ namespace brewing.Helpers;
             CreateMap<CreateRecipeRequest, Recipe>();
 
             //UpdateRecipeRequest
-            CreateMap<UpdateRecipeRequest, Recipe>()
-                .ForAllMembers(x=>x.Condition)
+            CreateMap<UpdateRecipeRequest, Recipe>();
+            
         }
     }
 }

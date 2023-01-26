@@ -3,6 +3,9 @@ using AutoMapper;
 using brewing.Models;
 using brewing.Requests;
 using BrewingContext;
+using System;
+using System.Collections.Generic;
+
 
 namespace brewing.RecipeService {
     public interface IRecipeService {
@@ -25,18 +28,15 @@ namespace brewing.RecipeService {
       Task DeleteRecipe(int id);
 
     }
-
     public class RecipeService: IRecipeService {
         private ProjectContext _dbcontext;
         private readonly IMapper _mapper;
-
         public RecipeService(ProjectContext dbcontext, IMapper imapper){
 
           _dbcontext =_dbcontext;
           _mapper = _mapper;
 
         }
-
         public async Task<int> CreateRecipe(CreateRecipeRequest model) {
             // Validate new recipe
             if (await _dbcontext.Recipes.AnyAsync(x => x.Name == model.Name))
@@ -62,7 +62,6 @@ namespace brewing.RecipeService {
           await _dbcontext.SaveChangesAsync().ConfigureAwait(true);
 
         }
-
         private async Task<Recipe> _getRecipeById(int id)
         {
             Recipe? recipe = await  _dbcontext.Recipes
@@ -73,19 +72,15 @@ namespace brewing.RecipeService {
             if (recipe == null){
               throw new KeyNotFoundException("Recipe Not Found");
             }
-
         }
-
         public async Task<IEnumerable<Recipe>> GetRecipeByName(string Name){
 
           return await _getRecipeByName(Name).ConfigureAwait(true);
         }
-
         private Task<IEnumerable<Recipe>> _getRecipeByName(string name)
         {
             throw new NotImplementedException();
         }
-
         public async Task UpdateRecipe(int id, UpdateRecipeRequest model){
 
           Recipe? recipe = await _getRecipeById(id).ConfigureAwait(true);
@@ -98,10 +93,7 @@ namespace brewing.RecipeService {
           _dbcontext.Recipes.Update(recipe);
           await _dbcontext.SaveChangesAsync();
 
-
-
         }
-
         public Task<IEnumerable<Recipe>> GetAllRecipes()
         {
             throw new NotImplementedException();
@@ -111,7 +103,6 @@ namespace brewing.RecipeService {
         {
             throw new NotImplementedException();
         }
-
         public Task<Recipe> GetRecipeByMalt(string Malts)
         {
             throw new NotImplementedException();
