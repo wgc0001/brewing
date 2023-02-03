@@ -1,7 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using brewing.Models;
-using BrewingContext;
+using BrewingData;
 using brewing.RecipeService;
 using brewing.Helpers;
 using brewing.Requests;
@@ -29,7 +29,7 @@ namespace brewing.Controllers
             return Ok(recipes);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{Name}")]
         public async Task<IActionResult> GetRecipeByName(string Name)
         {
             Recipe recipe = await _RecipeService.GetRecipeByName(Name);
