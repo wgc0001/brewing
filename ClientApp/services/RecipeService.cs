@@ -19,8 +19,24 @@ namespace brewing.RecipeService {
     Task<Recipe> GetRecipeById(int id);
 
     //Create a new recipe 
-    Task<int> CreateRecipe(int id);
-    
+    Task<int> CreateRecipe(CreateRecipeRequest model);
+
+    //Update a recipe
+    Task UpdateRecipe(UpdateRecipeRequest model);
+
+    //Delete a recipe
+    Task DeleteRecipe(int id);
+  }
+
+  public class RecipeService: IRecipeService
+  {
+    private BrewingContext _dbContext;
+    private readonly IMapper _mapper;
+
+    public RecipeService(BrewingContext dbContext, IMapper mapper)
+    {
+      
+    }
   }
 }
 
