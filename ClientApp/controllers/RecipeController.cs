@@ -29,12 +29,12 @@ namespace brewing.Controllers
             return Ok(recipes);
         }
 
-        [HttpGet("{Name}")]
-        public async Task<IActionResult> GetRecipeByName(string Name)
-        {
-            Recipe recipe = await _RecipeService.GetRecipeByName(Name);
-            return Ok(recipe);
-        }
+        // [HttpGet("{Name}")]
+        // public async Task<IActionResult> GetRecipeByName(string Name)
+        // {
+        //     Recipe recipe = await _RecipeService.GetRecipeByName(Name);
+        //     return Ok(recipe);
+        // }
 
         [HttpPost]
         public async Task<IActionResult> CreateRecipe(CreateRecipeRequest model)
