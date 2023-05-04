@@ -27,7 +27,7 @@ namespace brewing.RecipeService {
     //Delete a recipe
     Task DeleteRecipe(int id);
 
-    // Task GetRecipeByName(string Name);
+    IEnumerable<Recipe> SearchRecipesByName(string name);
 
   }
   public class RecipeService: IRecipeService
@@ -96,14 +96,12 @@ namespace brewing.RecipeService {
       return await _getRecipeById(id);
     }
 
-    // public async Task<Recipe> GetRecipeByName(string Name)
-    // {
-    //   var recipe = _dbContext.FirstOrDefault(r => r.Name ==name);
-
-    //   return recipe;
-      
-
-    // }
+    public IEnumerable<Recipe> SearchRecipesByName(string name)
+    {
+      return _dbContext.Recipes
+            .Where(recipe => recipe.Name.Contains(name))
+            .ToList();
+    }
 
   }
 }
