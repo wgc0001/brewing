@@ -1,13 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import RecipeForm from './RecipeForm';
-
+import SearchRecipes from './SearchRecipes';
 
 function App() {
   return (
     <div className="App">
-      <h1>Beer Recipe Form</h1>
-      <RecipeForm />
+      <div className="left">
+        <h1>Beer Recipe Form</h1>
+        <RecipeForm />
+      </div>
+      <div className="right">
+        <SearchRecipes />
+      </div>
     </div>
   );
 }
