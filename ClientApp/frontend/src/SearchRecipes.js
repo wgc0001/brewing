@@ -22,9 +22,10 @@ function SearchRecipes() {
 
   return (
     <div>
+      <h2>Search for Recipes</h2>
       <form onSubmit={handleSubmit}>
+        <strong>Enter Name:</strong>
         <label>
-          Search for recipes by name:
           <input type="text" value={query} onChange={handleInputChange} />
         </label>
         <button type="submit">Search</button>
